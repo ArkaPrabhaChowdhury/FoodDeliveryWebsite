@@ -1,0 +1,76 @@
+.container{
+    width: fit-content;
+    height: fit-content;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 25px 25px;
+
+}
+
+.item{
+    height: fit-content;
+    width: fit-content;
+    background-color: rgb(235, 233, 233);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 10px;
+    transition: ease-in;
+    
+}
+
+
+.item .p{
+    display: inline-flex;
+}
+
+.item .p .info{
+    width: 75%;
+}
+
+.item .p .img{
+    float: right;
+    margin-top: -20%;
+}
+/*----------------------------------------------------------------Product Counter----------------------------------------------------------------*/
+.acart .img{
+    width: 20px;
+    height: 20px;
+}
+
+.add-btn{
+    margin-left: 200px;
+    margin-right: 200px;
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    border: 2px solid orange;
+    background-color: orange;
+    color: aliceblue;
+    font-size: medium;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.cart{
+    margin-left: 1000px;
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: orange;
+    color: white;
+    border: 2px solid orange;
+}
+
+.signout{
+    width: 150px;
+    height: 50px;
+    margin-left: 1800px;
+    margin-top: 25px;
+    background-color: orange;
+    color: white;
+    border: 2px solid orange;
+    border-radius: 20px;
+}

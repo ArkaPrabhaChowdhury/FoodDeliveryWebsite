@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="cart.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>Your Shopping Cart</h1>
+  <div class = "card">
+    <div class="item">
+        <p><b>Mango Pickle</b></p>
+    </div>
+    <div class="price">
+        <p>100/-</p>
+    </div>
+    <button class="butt">Show Item...</button>
+    <div class="coupon">
+        <span class="close"><b>X</b></span>
+    </div>
+  </div>
+  <div class = "card">
+    <div class="item">
+        <p><b>Kichidi</b></p>
+    </div>
+    <div class="price">
+        <p>150/-</p>
+    </div>
+    <button class="butt">Show Item...</button>
+    <div class="coupon">
+        <span class="close"><b>X</b></span>
+    </div>
+  </div>
+  <div class="placingorder">
+    <p class="total"><b>Total:</b> 350/-</p>
+  </div>
+  <div class="coupon2">
+    <label>Apply Coupon: </label>
+    <input type="text">
+  </div>
+  <div class="order">
+    <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_K74yUZFFCf0ihy" async> </script> </form>
+  </div>
+  <script src="cart.js"></script>
+</body>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Login.css">
+    
+    <title>Document</title>
+    
+</head>
+<body>
+    <div>
+      
+        <div class="container">
+          <label for="uname"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" id="email" name="email" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" id="psw" required>
+      
+          <a href="menu.html"><button id="login" type="submit">Login</button>
+            </a>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+      
+        <div class="container" style="background-color:#f1f1f1">
+
+          <button  class="cancelbtn"><a href="Index.html">Register Here</a></button>
+
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </div>
+</body>
+
+
+
+
+
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-analytics.js";
+  import { getDatabase,set , ref,update } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCnmPDfsb9DpTSql9JGm9TTTUUFEdOyqGs",
+    authDomain: "fooddelivery-3e42e.firebaseapp.com",
+    databaseURL: "https://fooddelivery-3e42e-default-rtdb.firebaseio.com",
+    projectId: "fooddelivery-3e42e",
+    storageBucket: "fooddelivery-3e42e.appspot.com",
+    messagingSenderId: "781523664821",
+    appId: "1:781523664821:web:68d59551e2e802c4a2a3fc",
+    measurementId: "G-EYEMWH2701"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const analytics = getAnalytics(app);
+  const auth = getAuth();
+  
+
+  login.addEventListener('click', (e) => {
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('psw').value;
+
+    const auth = getAuth();
+signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    const dt = new Date();
+    update(ref(database, 'users/' + user.uid),{
+          last_login: dt,
+    })
+
+    alert("Signed in successfully");
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+  });
+  });
+   const user = auth.currentUser;
+  onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+});
+</script>
+</html>

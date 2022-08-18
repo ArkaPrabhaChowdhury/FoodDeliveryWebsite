@@ -1,0 +1,83 @@
+.card{
+    
+    height: 100px;
+    width: 500px;
+    border-radius: 10px;
+    border: 2px solid black;
+    margin: 20px;
+}
+.card:hover{
+    box-shadow: 5px 5px grey;
+}
+.image img{
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
+    width: 20%;
+    height: 20%;
+}
+.item{
+    float: left;
+    margin-top: 25px;
+    margin-left: 25px;
+    text-align: center;
+}
+.price{
+    float: left;
+    margin-top: 25px;
+    margin-left: 50px;
+    text-align: center;
+}
+.butt{
+    float: left;
+    margin-left: 50px;
+    margin-top: 38px;
+    text-align: center;
+}
+.butt:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: .5s;
+}
+.placingorder{
+    float: left;
+    margin-left: 20px;
+}
+.order button{
+    background-color: orangered;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 180px;
+}
+.order button:hover{
+    background-color: green;
+}
+.close{
+    cursor: pointer;
+    position: absolute;
+    padding: 3px;
+    margin-left: 50px;
+}
+.close:hover{
+    background: #bbb;
+}
+.coupon{
+    margin-top: 38px;
+}
+.coupon label{
+    margin-left: 30px;
+}
+.coupon2{
+    margin-top: 35px;
+    margin-bottom: 40px;
+}
+.coupon2 label{
+    margin-left: 150px;
+}
